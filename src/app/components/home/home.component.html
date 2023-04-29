@@ -1,0 +1,40 @@
+<h1>User Fitness Activity</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Activity</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Activity</th>
+            <th>Activity Date</th>
+            <th>Duration</th>
+            <th>Distance</th>
+            <th>Calories</th>
+           
+           
+        </tr>
+    </thead>
+    
+    <tbody>
+     
+        <tr *ngFor="let user of users">
+            <td>{{user.user_id}}</td>
+            <td>{{user.activity_id}}</td>
+            <td>{{user.Date}}</td>
+            <td>{{user.duration}}</td>
+            <td>{{user.distance}}</td>
+            <td>{{user.calories}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!users">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
