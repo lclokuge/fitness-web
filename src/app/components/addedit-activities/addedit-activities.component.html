@@ -5,28 +5,28 @@
     <div class="row">
         <div class="col-md-6">
             <label>Select Name</label>
-            <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                <option value=""></option>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-                <option value="Ms">Ms</option>
+            <select formControlName="user_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.user_id.errors }">
+                <option value="0">--Select--</option>  
+                                <option *ngFor="let usr of user"  
+                                        value={{usr.id}}>  
+                                    {{usr.user_name}}  
+                                </option>  
             </select>
-            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                <div *ngIf="f.title.errors.required">Title is required</div>
+            <div *ngIf="submitted && f.user_id.errors" class="invalid-feedback">
+                <div *ngIf="f.user_id.errors.required">Name is required</div>
             </div>
         </div>
         <div class="form-group col-5">
             <label>Select Activity</label>
-            <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                <option value=""></option>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-                <option value="Ms">Ms</option>
+            <select formControlName="activity_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.activity_id.errors }">
+                <option value="0">Select</option>
+                <option value="1">Runing</option>
+                <option value="2">Walking</option>
+                <option value="3">Cycling</option>
+                <option value="4">Swimming</option>
             </select>
-            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                <div *ngIf="f.title.errors.required">Title is required</div>
+            <div *ngIf="submitted && f.activity_id.errors" class="invalid-feedback">
+                <div *ngIf="f.activity_id.errors.required">Activity is required</div>
             </div>
         </div>
        
@@ -36,16 +36,16 @@
     <div class="row">
         <div class="col-md-6">
             <label>Duration</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <input type="text" formControlName="duration" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.duration.errors }" />
+            <div *ngIf="submitted && f.duration.errors" class="invalid-feedback">
+                <div *ngIf="f.duration.errors.required">Duration is required</div>
             </div>
         </div>
         <div class="form-group col-5">
             <label>Distance</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <input type="text" formControlName="distance" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.distance.errors }" />
+            <div *ngIf="submitted && f.distance.errors" class="invalid-feedback">
+                <div *ngIf="f.distance.errors.required">Distance is required</div>
             </div>
         </div>
        
@@ -53,19 +53,26 @@
 
     <div class="row">
         <div class="col-md-6">
-            <label>calories</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <label>Burned Calories</label>
+            <input type="text" formControlName="calories" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.calories.errors }" />
+            <div *ngIf="submitted && f.calories.errors" class="invalid-feedback">
+                <div *ngIf="f.calories.errors.required">Calories Name is required</div>
             </div>
         </div>
         <div class="form-group col-5">
             <label>Note</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-            </div>
+            <input type="text" formControlName="note" class="form-control"  />
+           
         </div>
        
+    </div>
+
+
+    <div class="form-group">
+        <button  class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
     </div>
 </form>
