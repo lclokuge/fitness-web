@@ -1,6 +1,6 @@
 export class Useractivity {
     id!: number;
-    Date!: Date;
+    Date!: string;
     duration!: string;
     calories!: string;
     distance!: string;

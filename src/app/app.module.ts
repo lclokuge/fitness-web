@@ -8,11 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AddeditActivitiesComponent } from './components/addedit-activities/addedit-activities.component';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddeditActivitiesComponent
+    AddeditActivitiesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -20,6 +25,7 @@ import { AddeditActivitiesComponent } from './components/addedit-activities/adde
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+  
     
   ],
   providers: [],

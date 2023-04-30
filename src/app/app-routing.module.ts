@@ -6,6 +6,7 @@ import { AddeditActivitiesComponent } from './components/addedit-activities/adde
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'add', component: AddeditActivitiesComponent },
+  { path: 'edit/:id', component: AddeditActivitiesComponent }
 ];
 
 @NgModule({

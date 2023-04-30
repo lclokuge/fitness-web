@@ -16,22 +16,22 @@
     
     <tbody>
      
-        <tr *ngFor="let user of users">
-            <td>{{user.user_id}}</td>
-            <td>{{user.activity_id}}</td>
-            <td>{{user.Date}}</td>
-            <td>{{user.duration}}</td>
-            <td>{{user.distance}}</td>
-            <td>{{user.calories}}</td>
+        <tr *ngFor="let useract of useractivity">
+            <td>{{useract.user_id}}</td>
+            <td>{{useract.activity_id}}</td>
+            <td>{{useract.Date}}</td>
+            <td>{{useract.duration}}</td>
+            <td>{{useract.distance}}</td>
+            <td>{{useract.calories}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
-                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!user.isDeleting">Delete</span>
+                <a routerLink="edit/{{useract.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteUser(useract.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="useract.isDeleting">
+                    <span *ngIf="useract.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!useract.isDeleting">Delete</span>
                 </button>
             </td>
         </tr>
-        <tr *ngIf="!users">
+        <tr *ngIf="!useractivity">
             <td colspan="4" class="text-center">
                 <span class="spinner-border spinner-border-lg align-center"></span>
             </td>
